@@ -6,6 +6,10 @@ class TestExercise < Test::Unit::TestCase
     assert_equal(0, Exercise.new().max_parallel_rooms())
   end
 
+  test 'invalid time' do
+    assert_equal(0, Exercise.new().max_parallel_rooms([10, 0]))
+  end
+
   test 'single room' do
     assert_equal(1, Exercise.new().max_parallel_rooms([30, 75], [80, 150]))
   end
